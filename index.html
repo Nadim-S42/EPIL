@@ -1,142 +1,478 @@
-<!doctype html>
+<!DOCTYPE html>
+
 <html lang="en">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="Enteric Pathogens Intelligence Lab, Department of Microbiology, Jahangirnagar University, Bangladesh.">
-  <title>Enteric Pathogens Intelligence Lab | Jahangirnagar University</title>
-  <style>
-    :root{--navy:#8f1825;--blue:#c62836;--cyan:#f06b73;--ink:#3d2024;--muted:#766368;--pale:#fff5f5;--line:#eed9dc;--white:#fff}
-    *{box-sizing:border-box} html{scroll-behavior:smooth} body{margin:0;font-family:Inter,ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;color:var(--ink);line-height:1.65}
-    a{color:inherit;text-decoration:none} a:focus-visible,button:focus-visible{outline:3px solid var(--cyan);outline-offset:3px}
-    .wrap{width:min(1160px,calc(100% - 40px));margin:auto}
-    header{position:sticky;top:0;z-index:20;background:#ffffffed;backdrop-filter:blur(12px);border-bottom:1px solid var(--line)}
-    .nav{min-height:82px;display:flex;align-items:center;justify-content:space-between;gap:24px}
-    .brand{display:flex;align-items:center;gap:13px;min-width:0}.logo{width:70px;height:70px;flex:none;object-fit:contain}
-    .brand strong{display:block;font-size:clamp(15px,2vw,21px);line-height:1.2;color:var(--navy)}.brand span{display:block;font-size:12px;color:var(--muted);margin-top:5px}
-    nav{display:flex;gap:23px;align-items:center;font-size:13px;font-weight:650;color:#244463}
-    nav a:hover{color:var(--blue)}.menu{display:none;border:1px solid var(--line);background:white;border-radius:9px;padding:9px 12px;color:var(--navy)}
-    .hero{position:relative;overflow:hidden;color:#8f1825;background-image:linear-gradient(90deg,rgba(255,255,255,.83) 0%,rgba(255,250,250,.72) 40%,rgba(143,24,37,.02) 72%),url('images/hero-bacteria.jpg');background-size:cover;background-position:center right;background-repeat:no-repeat;background-color:#fff5f5}
-    .hero:before,.hero:after{content:"";position:absolute;border:1px solid #ffd6da22;border-radius:50%;width:470px;height:470px;right:5%;top:-190px}
-    .hero:after{width:330px;height:330px;right:10%;top:-120px}
-    .hero-grid{position:relative;z-index:1;display:grid;grid-template-columns:1fr;align-items:center;gap:0;min-height:520px;padding-top:58px;padding-bottom:52px}
-    .eyebrow{font-size:12px;letter-spacing:.16em;text-transform:uppercase;color:#a40f22;font-weight:750}
-    h1{font-size:clamp(35px,5vw,58px);line-height:1.08;letter-spacing:-.035em;margin:13px 0 18px;max-width:650px}
-    .hero p{font-size:17px;color:#303943;max-width:560px;margin:0 0 27px}
-    .actions{display:flex;gap:12px;flex-wrap:wrap}.btn{display:inline-flex;align-items:center;gap:9px;border-radius:7px;padding:12px 17px;font-weight:750;font-size:13px;background:#a40f22;color:#fff;border:1px solid #a40f22}
-    .btn.secondary{background:rgba(255,255,255,.88);color:#a40f22;border-color:#a40f22}.btn:hover{transform:translateY(-1px)}
-    .micro-visual{display:none}
-    .cell{width:250px;height:104px;border-radius:55% 45% 48% 52%;transform:rotate(-25deg);background:linear-gradient(135deg,#8ae6f4,#368fc7 45%,#194c8d);box-shadow:inset -15px -10px 25px #062a59, inset 8px 8px 24px #fff1f2,0 20px 70px #d91e3555;position:relative;border:2px solid #ffd8dc}
-    .cell:before{content:"";position:absolute;inset:18px 28px;border:2px solid #c4f5ff80;border-radius:50%;transform:rotate(18deg)}
-    .cell:after{content:"";position:absolute;inset:-18px -25px;border:2px dotted #ffb7bf;border-radius:50%;transform:rotate(14deg)}
-    .dot{position:absolute;width:8px;height:8px;border-radius:50%;background:#ffd6da;box-shadow:0 0 14px #ffb8c0}
-    .dot.d1{top:22%;left:20%}.dot.d2{top:69%;left:75%}.dot.d3{top:18%;right:15%}.dot.d4{bottom:15%;left:34%}
-    .focus-strip{background:white;border-bottom:1px solid var(--line)}.focus-grid{display:grid;grid-template-columns:repeat(4,1fr);padding:23px 0}
-    .focus{padding:5px 21px;border-right:1px solid var(--line)}.focus:first-child{padding-left:0}.focus:last-child{border:0}.focus b{display:block;font-size:14px;color:var(--navy)}.focus span{font-size:12px;color:var(--muted)}
-    section{scroll-margin-top:95px}.section{padding:76px 0}.section.tint{background:var(--pale)}
-    .section-head{max-width:680px;margin-bottom:30px}.kicker{font-size:11px;letter-spacing:.15em;text-transform:uppercase;font-weight:800;color:var(--blue)}
-    h2{font-size:clamp(27px,3.2vw,37px);line-height:1.2;color:var(--navy);letter-spacing:-.025em;margin:7px 0 12px}
-    .lead{color:var(--muted);margin:0}.about-grid{display:grid;grid-template-columns:1fr 1fr;gap:54px;align-items:center}
-    .callout{padding:28px;border-radius:14px;background:linear-gradient(145deg,#ffe7e9,#fffafb);border:1px solid #f1cbd0}
-    .callout h3{margin:0 0 10px;color:var(--navy)}.callout p{margin:0;color:#4c6479;font-size:14px}
-    .cards{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
-    .card{padding:25px;background:white;border:1px solid var(--line);border-radius:13px;box-shadow:0 5px 18px #173a5908}
-    .card .num{display:grid;place-items:center;width:42px;height:42px;border-radius:11px;background:#ffeaec;color:var(--blue);font-weight:850;margin-bottom:18px}
-    .card h3{margin:0 0 8px;color:var(--navy);font-size:17px}.card p{margin:0;color:var(--muted);font-size:14px}
-    .people-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}.person{border:1px solid var(--line);background:white;border-radius:12px;padding:22px}
-    .avatar{height:68px;width:68px;border-radius:50%;background:linear-gradient(145deg,#ffe0e3,#e98b96);display:grid;place-items:center;color:var(--navy);font-weight:850;font-size:22px;margin-bottom:15px}
-    .person h3{margin:0;color:var(--navy);font-size:16px}.person p{margin:4px 0 0;font-size:13px;color:var(--muted)}
-    .pub-list{border-top:1px solid var(--line)}.pub{display:grid;grid-template-columns:50px 1fr;gap:16px;padding:19px 0;border-bottom:1px solid var(--line)}
-    .pub .year{font-weight:850;color:var(--blue)}.pub h3{font-size:15px;margin:0 0 4px;color:var(--navy)}.pub p{font-size:13px;color:var(--muted);margin:0}
-    .contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:40px}.contact-panel{padding:28px;border-radius:14px;background:var(--navy);color:white}.contact-panel h3{margin-top:0}.contact-panel p{color:#d9e8f4}
-    .contact-panel a{color:#ffc2c8;text-decoration:underline;text-underline-offset:3px}.note{font-size:12px;color:var(--muted)}
-    footer{background:#4b0d16;color:#dce8f3;padding:28px 0;font-size:12px}.foot{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap}
-    @media(max-width:900px){nav{gap:12px;font-size:12px}.hero-grid{gap:20px}.focus{padding:5px 12px}.cards,.people-grid{grid-template-columns:repeat(2,1fr)}}
-    @media(max-width:700px){.wrap{width:min(100% - 30px,1160px)}.nav{min-height:74px}.brand span{max-width:220px}.menu{display:block}nav{display:none;position:absolute;top:73px;left:0;right:0;padding:18px 24px;background:white;border-bottom:1px solid var(--line);flex-direction:column;align-items:flex-start;font-size:14px}nav.open{display:flex}.hero-grid{grid-template-columns:1fr;padding-top:55px;padding-bottom:40px}.micro-visual{min-height:170px}.cell{width:195px;height:80px}.focus-grid{grid-template-columns:repeat(2,1fr);gap:15px}.focus{border:0;padding:5px 0}.section{padding:55px 0}.about-grid,.contact-grid{grid-template-columns:1fr;gap:24px}.cards,.people-grid{grid-template-columns:1fr}.section-head{margin-bottom:23px}}
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<meta content="Enteric Pathogens Intelligence Lab studies enteric pathogen diversity, molecular epidemiology, diagnostics, antimicrobial resistance, and public health." name="description"/>
+<meta content="#a40f22" name="theme-color"/>
+<title>Enteric Pathogens Intelligence Lab</title>
+<style>
+    :root {
+      --red: #a40f22;
+      --red-dark: #790b19;
+      --red-bright: #c21d32;
+      --ink: #252a31;
+      --muted: #5f6670;
+      --white: #fff;
+      --pale: #fff6f6;
+      --line: #eedcde;
+      --shadow: 0 12px 34px rgba(87, 12, 24, .09);
+      --max: 1240px;
+    }
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body { margin: 0; font-family: Inter, "Segoe UI", Arial, sans-serif; color: var(--ink); background: var(--white); line-height: 1.6; }
+    a { color: inherit; }
+    .wrap { width: min(var(--max), calc(100% - 44px)); margin-inline: auto; }
+    .site-header { position: sticky; top: 0; z-index: 20; background: rgba(255,255,255,.97); border-bottom: 1px solid #f0e5e6; backdrop-filter: blur(10px); }
+    .nav { min-height: 92px; display: flex; align-items: center; justify-content: space-between; gap: 28px; }
+    .brand { display: flex; align-items: center; gap: 13px; text-decoration: none; min-width: 300px; }
+    .brand-mark { width: 58px; height: 58px; flex: 0 0 58px; border: 2px solid var(--red); color: var(--red); border-radius: 50%; display: grid; place-items: center; font-size: 29px; font-weight: 700; }
+    .brand-name { font: 700 23px/1.06 Georgia, "Times New Roman", serif; color: var(--red); letter-spacing: -.35px; }
+    .brand-sub { margin-top: 5px; font-size: 11px; letter-spacing: 2px; color: #555d67; font-weight: 700; text-transform: uppercase; }
+    .nav-links { display: flex; align-items: center; gap: clamp(15px, 2.2vw, 32px); }
+    .nav-links a { text-decoration: none; font-weight: 600; font-size: 14px; color: #2c3037; padding: 12px 0; border-bottom: 2px solid transparent; }
+    .nav-links a:hover, .nav-links a.active { color: var(--red); border-color: var(--red); }
+    .menu-toggle { display: none; border: 1px solid var(--line); border-radius: 9px; background: white; color: var(--red); font-size: 23px; padding: 5px 12px; cursor: pointer; }
+    .hero { position: relative; overflow: hidden; min-height: 560px; display: flex; align-items: center; background: linear-gradient(90deg, rgba(255,250,250,.98) 0%, rgba(255,247,247,.95) 34%, rgba(255,245,246,.50) 52%, rgba(108,7,21,.10) 100%), url("images/pathogen-antibiotics-hero.jpg") center right / cover no-repeat; }
+    .hero::after { content: ""; position: absolute; inset: 0; pointer-events: none; background: linear-gradient(0deg, rgba(164,15,34,.10), transparent 35%); }
+    .hero-inner { position: relative; z-index: 1; padding: 64px 0 58px; }
+    .hero-copy { max-width: 570px; }
+    .eyebrow { display: inline-flex; align-items: center; gap: 10px; color: var(--red); font-size: 12px; letter-spacing: 2.1px; text-transform: uppercase; font-weight: 800; }
+    .eyebrow::before { content: ""; width: 27px; height: 2px; background: var(--red); }
+    h1, h2, h3 { margin-top: 0; }
+    h1 { margin: 18px 0 18px; color: var(--red); font: 700 clamp(40px, 4.3vw, 62px)/1.08 Georgia, "Times New Roman", serif; letter-spacing: -1.1px; }
+    .hero-lede { max-width: 560px; color: #303943; font: 400 clamp(18px, 1.65vw, 23px)/1.55 Georgia, "Times New Roman", serif; margin: 0 0 27px; }
+    .actions { display: flex; gap: 14px; flex-wrap: wrap; }
+    .btn { display: inline-flex; align-items: center; justify-content: center; gap: 10px; min-height: 47px; padding: 12px 24px; border: 1.5px solid var(--red); border-radius: 7px; text-decoration: none; font-weight: 750; transition: transform .18s ease, background .18s ease; }
+    .btn:hover { transform: translateY(-2px); }
+    .btn-primary { background: var(--red); color: white; box-shadow: 0 7px 18px rgba(164,15,34,.18); }
+    .btn-secondary { background: rgba(255,255,255,.88); color: var(--red); }
+    .hero-points { display: flex; gap: 0; margin-top: 48px; flex-wrap: wrap; }
+    .point { display: flex; align-items: center; gap: 11px; padding: 0 21px; border-right: 1px solid #d7c5c8; font-size: 13px; line-height: 1.35; max-width: 190px; }
+    .point:first-child { padding-left: 0; }
+    .point:last-child { border: 0; }
+    .point-icon { color: var(--red); font-size: 24px; }
+    section { scroll-margin-top: 100px; }
+    .section { padding: 76px 0; }
+    .section-soft { background: var(--pale); }
+    .section-heading { text-align: center; max-width: 760px; margin: 0 auto 38px; }
+    .section-heading .eyebrow { justify-content: center; }
+    .section-heading .eyebrow::before { width: 38px; }
+    h2 { color: var(--red); font: 700 clamp(30px, 3vw, 43px)/1.2 Georgia, "Times New Roman", serif; margin: 10px 0 12px; }
+    .section-heading p { color: var(--muted); margin: 0; }
+    .cards { display: grid; grid-template-columns: repeat(3, 1fr); gap: 22px; }
+    .card { background: white; border: 1px solid var(--line); border-radius: 14px; padding: 27px; box-shadow: 0 4px 18px rgba(74,15,25,.035); }
+    .card-icon { display: grid; place-items: center; width: 52px; height: 52px; border-radius: 12px; color: var(--red); background: #fff0f1; margin-bottom: 17px; }
+    .card-icon svg { width: 34px; height: 34px; fill: none; stroke: currentColor; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; }
+    .point-icon svg { width: 25px; height: 25px; fill: none; stroke: currentColor; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; vertical-align: middle; }
+    .card h3 { margin-bottom: 8px; color: #3a2226; font-size: 19px; }
+    .card p { margin: 0; color: var(--muted); font-size: 14px; }
+    .publication-cards { align-items: stretch; }
+    .publication-card { display: flex; flex-direction: column; align-items: flex-start; }
+    .publication-year { display: inline-block; margin-bottom: 13px; color: var(--red); font-size: 11px; font-weight: 800; letter-spacing: 1px; text-transform: uppercase; }
+    .publication-card h3 { line-height: 1.4; }
+    .publication-card .publication-authors { margin: 8px 0; color: var(--muted); font-size: 13px; }
+    .publication-card .publication-journal { margin: 0 0 17px; color: #4a4f57; font-size: 13px; }
+    .publication-link { margin-top: auto; color: var(--red); font-size: 13px; font-weight: 800; text-decoration: none; }
+    .publication-link:hover { text-decoration: underline; }
+    .about-grid { display: grid; grid-template-columns: 1.1fr .9fr; align-items: center; gap: 52px; }
+    .about-grid p { color: var(--muted); }
+    .callout { border-left: 4px solid var(--red); background: #fff6f6; padding: 22px 24px; border-radius: 0 12px 12px 0; color: #4e3337; }
+    .people-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 22px; max-width: 850px; margin: 0 auto; }
+    .person { display: flex; align-items: center; gap: 18px; padding: 24px; border: 1px solid var(--line); border-radius: 14px; background: white; box-shadow: var(--shadow); }
+    .avatar { width: 68px; height: 68px; flex: 0 0 68px; display: grid; place-items: center; border-radius: 50%; color: white; background: linear-gradient(145deg, var(--red-bright), var(--red-dark)); font: 700 19px Georgia, serif; }
+    .person h3 { margin: 0 0 5px; font-size: 18px; }
+    .person p { margin: 0; color: var(--red); font-weight: 700; font-size: 13px; }
+    .notice { text-align: center; max-width: 780px; margin: 0 auto; }
+    .notice p { color: var(--muted); }
+    .contact-panel { display: flex; justify-content: space-between; align-items: center; gap: 24px; padding: 32px; border-radius: 16px; color: white; background: linear-gradient(120deg, var(--red-dark), var(--red)); }
+    .contact-panel h2 { color: white; margin: 0 0 8px; }
+    .contact-panel p { margin: 0; color: #ffe8eb; }
+    .contact-panel .btn { border-color: white; background: white; color: var(--red); white-space: nowrap; }
+    .contact-panel .contact-email { margin-top: 10px; }
+    .contact-panel a { color: #fff; text-decoration: underline; text-underline-offset: 3px; }
+    .autoplay-toggle { background: var(--red); color: white; }
+    footer { background: #3c0a12; color: #fbecef; padding: 28px 0; font-size: 13px; }
+    .footer-inner { display: flex; justify-content: space-between; align-items: center; gap: 18px; }
+    footer p { margin: 0; }
+    .footer-links { display: flex; gap: 18px; flex-wrap: wrap; }
+    .footer-links a { color: #fbecef; text-decoration: none; }
+    .footer-links a:hover { text-decoration: underline; }
+
+    .publication-carousel { max-width: 1120px; margin: 0 auto; }
+    .publication-slide-nav { display: flex; justify-content: center; flex-wrap: wrap; gap: 9px; margin: 0 auto 26px; }
+    .year-tab { border: 1px solid #e4c6ca; border-radius: 999px; padding: 9px 18px; background: #fff; color: var(--red); font: inherit; font-size: 14px; font-weight: 800; cursor: pointer; transition: background .18s ease, color .18s ease, transform .18s ease; }
+    .year-tab:hover { transform: translateY(-1px); }
+    .year-tab.active, .year-tab[aria-selected="true"] { color: #fff; background: var(--red); border-color: var(--red); }
+    .publication-slide-heading { display: flex; align-items: baseline; justify-content: space-between; gap: 14px; margin: 0 0 18px; padding-bottom: 12px; border-bottom: 1px solid var(--line); }
+    .publication-slide-heading h3 { margin: 0; color: var(--red); font: 700 27px/1.2 Georgia, "Times New Roman", serif; }
+    .publication-count { color: var(--muted); font-size: 13px; }
+    .publication-slide[hidden] { display: none !important; }
+    .publication-slide .publication-cards { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+    .publication-controls { display: flex; justify-content: space-between; align-items: center; gap: 16px; margin-top: 24px; }
+    .slide-arrow { display: inline-flex; align-items: center; justify-content: center; gap: 8px; min-height: 42px; padding: 9px 15px; border: 1px solid var(--red); border-radius: 8px; background: #fff; color: var(--red); font: inherit; font-size: 13px; font-weight: 800; cursor: pointer; }
+    .slide-arrow:hover:not(:disabled) { background: #fff0f1; }
+    .slide-arrow:disabled { opacity: .4; cursor: not-allowed; }
+    .slide-status { color: var(--muted); font-size: 13px; font-weight: 700; text-align: center; }
+    @media (max-width: 960px) { .publication-slide .publication-cards { grid-template-columns: 1fr 1fr; } }
+    @media (max-width: 620px) { .publication-slide .publication-cards { grid-template-columns: 1fr; } .publication-controls { gap: 8px; flex-wrap: wrap; } .slide-arrow { padding: 8px 10px; font-size: 12px; } .year-tab { padding: 8px 13px; } }
+    @media (prefers-reduced-motion: reduce) { .year-tab, .year-tab:hover { transition: none; transform: none; } }
+
+    @media (max-width: 960px) {
+      .nav { min-height: 80px; }
+      .brand { min-width: 0; }
+      .brand-name { font-size: 19px; }
+      .brand-sub { font-size: 9px; letter-spacing: 1.5px; }
+      .menu-toggle { display: block; }
+      .nav-links { display: none; position: absolute; left: 0; right: 0; top: 100%; padding: 12px 22px 18px; background: white; border-bottom: 1px solid var(--line); flex-direction: column; align-items: stretch; gap: 0; box-shadow: var(--shadow); }
+      .nav-links.open { display: flex; }
+      .nav-links a { padding: 10px 0; }
+      .hero { min-height: 530px; background-position: center right 35%; }
+      .hero-copy { max-width: 530px; }
+      .cards { grid-template-columns: 1fr 1fr; }
+      .about-grid { gap: 28px; }
+    }
+    @media (max-width: 640px) {
+      .wrap { width: min(100% - 30px, var(--max)); }
+      .brand-mark { width: 45px; height: 45px; flex-basis: 45px; font-size: 23px; }
+      .brand-name { font-size: 16px; }
+      .brand-sub { font-size: 8px; letter-spacing: .8px; }
+      .hero { min-height: auto; background-image: linear-gradient(90deg, rgba(255,250,250,.96), rgba(255,247,247,.84)), url("images/pathogen-antibiotics-hero.jpg"); background-position: center; }
+      .hero-inner { padding: 54px 0 42px; }
+      h1 { font-size: 42px; }
+      .hero-lede { font-size: 19px; }
+      .hero-points { margin-top: 34px; gap: 15px; }
+      .point { padding: 0 12px 0 0; border: 0; max-width: 46%; }
+      .section { padding: 55px 0; }
+      .cards, .people-grid, .about-grid { grid-template-columns: 1fr; }
+      .contact-panel { align-items: flex-start; flex-direction: column; padding: 25px; }
+      .footer-inner { align-items: flex-start; flex-direction: column; }
+    }
+    .donate-mini { padding: 18px 0; background: #fff7f5; border-top: 1px solid #f1d7d2; border-bottom: 1px solid #f1d7d2; }
+    .donate-mini-inner { display: flex; align-items: center; justify-content: space-between; gap: 18px; }
+    .donate-mini p { margin: 0; color: var(--muted); font-size: 13px; line-height: 1.55; }
+    .donate-mini strong { color: var(--ink); }
+    .donate-mini a { flex: 0 0 auto; color: var(--red); font-size: 13px; font-weight: 750; text-decoration: none; }
+    .donate-mini a:hover { text-decoration: underline; }
+    @media (max-width: 640px) { .donate-mini-inner { align-items: flex-start; flex-direction: column; gap: 8px; } }
+    @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } *, *::before, *::after { transition: none !important; } }
   </style>
 </head>
 <body>
-<header>
-  <div class="wrap nav">
-    <a class="brand" href="#home" aria-label="Enteric Pathogens Intelligence Lab home">
-      <img class="logo" src="images/epil-logo.png" alt="EPIL logo showing a rotavirus, micropipette, and phylogenetic tree">
-      <span><strong>Enteric Pathogens Intelligence Lab</strong><span>Department of Microbiology · Jahangirnagar University</span></span>
-    </a>
-    <button class="menu" id="menu" aria-expanded="false" aria-controls="navlinks">Menu ☰</button>
-    <nav id="navlinks" aria-label="Main navigation">
-      <a href="#home">Home</a><a href="#about">About</a><a href="#research">Research</a><a href="#people">People</a><a href="#publications">Publications</a><a href="#contact">Contact</a>
-    </nav>
-  </div>
+<header class="site-header">
+<div class="wrap nav">
+<a aria-label="Enteric Pathogens Intelligence Lab home" class="brand" href="#home">
+<span aria-hidden="true" class="brand-mark">✣</span>
+<span class="brand-name">Enteric Pathogens<br/>Intelligence Lab</span>
+</a>
+<button aria-controls="nav-links" aria-expanded="false" aria-label="Open navigation menu" class="menu-toggle">☰</button>
+<nav aria-label="Main navigation" class="nav-links" id="nav-links">
+<a class="active" href="#home">Home</a>
+<a href="#about">About</a>
+<a href="#research">Research</a>
+<a href="#people">People</a>
+<a href="#publications">Publications</a>
+<a href="#opportunities">Opportunities</a>
+<a href="#donate">Donate</a>
+<a href="#contact">Contact</a>
+</nav>
+</div>
 </header>
 <main>
-  <section class="hero" id="home">
-    <div class="wrap hero-grid">
-      <div>
-        <div class="eyebrow">Department of Microbiology · Bangladesh</div>
-        <h1>Enteric Pathogens<br>Intelligence Lab</h1>
-        <p>Understanding enteric pathogens through data, science, and innovation.</p>
-        <div class="actions"><a class="btn" href="#research">Explore our research <span aria-hidden="true">→</span></a><a class="btn secondary" href="#contact">Connect with the lab</a></div>
-      </div>
-      <div class="micro-visual" aria-label="Abstract illustration inspired by a microscopic bacterium" role="img"><div class="cell"></div><i class="dot d1"></i><i class="dot d2"></i><i class="dot d3"></i><i class="dot d4"></i></div>
-    </div>
-  </section>
-  <div class="focus-strip"><div class="wrap focus-grid">
-    <div class="focus"><b>Pathogen surveillance</b><span>Tracking enteric pathogens and disease patterns</span></div>
-    <div class="focus"><b>Molecular microbiology</b><span>Understanding pathogen biology and diversity</span></div>
-    <div class="focus"><b>Diagnostics & genomics</b><span>Methods for detection and characterization</span></div>
-    <div class="focus"><b>Public health impact</b><span>Translating evidence into useful insight</span></div>
-  </div></div>
-  <section class="section" id="about"><div class="wrap about-grid">
-    <div><div class="kicker">Who we are</div><h2>Research with real-world relevance</h2>
-      <p class="lead">The Enteric Pathogens Intelligence Lab is based in the Department of Microbiology at Jahangirnagar University, Bangladesh. Our website will share the lab’s research, people, publications, and opportunities for collaboration.</p>
-      <p class="note">This is starter copy. We should replace it with the lab’s approved mission statement and verified research details before publishing.</p>
-    </div>
-    <aside class="callout"><h3>Our approach</h3><p>We bring together microbiology, careful data analysis, and a public-health perspective to investigate questions around enteric pathogens. Add your lab’s specific methods, partners, and research priorities here.</p></aside>
-  </div></section>
-  <section class="section tint" id="research"><div class="wrap">
-    <div class="section-head"><div class="kicker">Research areas</div><h2>Questions that guide our work</h2><p class="lead">These are suggested categories for the first draft, not claims about confirmed ongoing projects. We can tailor them to your actual research.</p></div>
-    <div class="cards">
-      <article class="card"><div class="num">01</div><h3>Enteric bacterial pathogens</h3><p>Pathogen detection, characterization, transmission, and clinically relevant traits.</p></article>
-      <article class="card"><div class="num">02</div><h3>Viral and parasitic infections</h3><p>Investigating the burden, diversity, and epidemiology of enteric infections.</p></article>
-      <article class="card"><div class="num">03</div><h3>Antimicrobial resistance</h3><p>Studying resistance patterns and their implications for surveillance and treatment.</p></article>
-      <article class="card"><div class="num">04</div><h3>Molecular epidemiology</h3><p>Using molecular tools and data to investigate pathogen diversity and spread.</p></article>
-      <article class="card"><div class="num">05</div><h3>Diagnostics and methods</h3><p>Evaluating approaches for reliable pathogen detection and laboratory analysis.</p></article>
-      <article class="card"><div class="num">06</div><h3>One Health and public health</h3><p>Connecting research findings with wider surveillance and prevention questions.</p></article>
-    </div>
-  </div></section>
-  <section class="section" id="people"><div class="wrap">
-    <div class="section-head"><div class="kicker">Our people</div><h2>Meet the team</h2><p class="lead">Add verified names, roles, short biographies, and profile photographs here.</p></div>
-    <div class="people-grid">
-      <article class="person"><div class="avatar">SKD</div><h3>Shuvra Kanti Dey, PhD</h3><p>Principal Investigator (PI)</p></article>
-      <article class="person"><div class="avatar">NS</div><h3>Nadim Sharif, MS</h3><p>Co-Principal Investigator (Co-PI)</p></article>
-      <article class="person"><div class="avatar">EP</div><h3>Research Team</h3><p>Graduate students, researchers, and collaborators</p></article>
-    </div>
-  </div></section>
-  <section class="section tint" id="publications"><div class="wrap">
-    <div class="section-head"><div class="kicker">Our scholarship</div><h2>Selected publications</h2><p class="lead">Add verified citations and DOI or journal links. No sample publications have been invented for this template.</p></div>
-    <div class="pub-list">
-      <div class="pub"><div class="year">202X</div><div><h3>Publication title goes here</h3><p>Author list · Journal name · DOI or article link</p></div></div>
-      <div class="pub"><div class="year">202X</div><div><h3>Publication title goes here</h3><p>Author list · Journal name · DOI or article link</p></div></div>
-      <div class="pub"><div class="year">202X</div><div><h3>Publication title goes here</h3><p>Author list · Journal name · DOI or article link</p></div></div>
-    </div>
-  </div></section>
-  <section class="section" id="contact"><div class="wrap contact-grid">
-    <div><div class="kicker">Get in touch</div><h2>Connect with our lab</h2><p class="lead">For research collaborations, student opportunities, or questions about our work, contact the lab using the verified details below once added.</p></div>
-    <div class="contact-panel"><h3>Enteric Pathogens Intelligence Lab</h3><p>Department of Microbiology<br>Jahangirnagar University<br>Savar, Dhaka, Bangladesh</p><p>Email: <em>add official lab email</em><br>Website: <em>custom domain to be decided</em></p></div>
-  </div></section>
+<section class="hero" id="home">
+<div class="wrap hero-inner">
+<div class="hero-copy">
+<h1>Enteric Pathogens<br/>Intelligence Lab</h1>
+<p class="hero-lede">Tracking enteric pathogen diversity to understand infection outcomes and strengthen public-health responses.</p>
+<div class="actions">
+<a class="btn btn-primary" href="#research">Our Research <span aria-hidden="true">→</span></a>
+<a class="btn btn-secondary" href="#about">Learn More</a>
+</div>
+<div aria-label="Lab priorities" class="hero-points">
+<div class="point"><span aria-hidden="true" class="point-icon"><svg viewbox="0 0 48 48"><circle cx="24" cy="24" r="17"></circle><path d="M24 13v22M13 24h22"></path></svg></span><span>Pathogen<br/>Surveillance</span></div>
+<div class="point"><span aria-hidden="true" class="point-icon"><svg viewbox="0 0 48 48"><path d="M8 9h32v30H8zM15 16h18M15 23h18M15 30h10"></path></svg></span><span>Genomics &amp;<br/>Epidemiology</span></div>
+<div class="point"><span aria-hidden="true" class="point-icon"><svg viewbox="0 0 48 48"><circle cx="24" cy="24" r="17"></circle><circle cx="24" cy="24" r="9"></circle><circle cx="24" cy="24" r="2"></circle></svg></span><span>Public Health<br/>Impact</span></div>
+</div>
+</div>
+</div>
+</section>
+<section class="section" id="research">
+<div class="wrap">
+<div class="section-heading">
+<span class="eyebrow">Our Focus</span>
+<h2>Research Areas</h2>
+<p>Exploring enteric pathogens through microbiology, molecular investigation, and data-informed public health research.</p>
+</div>
+<div class="cards">
+<article class="card"><div aria-hidden="true" class="card-icon"><svg aria-label="Microscope and sample" role="img" viewbox="0 0 48 48"><path d="M18 7h10l4 4-4 4H18zM23 15v8m-6 0h12l4 5-4 5H17l-4-5zM22 33v5m-8 3h22M34 20l5 5M8 18l5 5m-4-9 5 5"></path><circle cx="35" cy="35" r="5"></circle></svg></div><h3>Pathogen Surveillance</h3><p>Tracking diarrhoea-causing viral and bacterial pathogens among children and monitoring their occurrence across populations.</p></article>
+<article class="card"><div aria-hidden="true" class="card-icon"><svg aria-label="Genetic network" role="img" viewbox="0 0 48 48"><circle cx="24" cy="24" r="4"></circle><circle cx="10" cy="12" r="3"></circle><circle cx="37" cy="10" r="3"></circle><circle cx="39" cy="36" r="3"></circle><circle cx="10" cy="37" r="3"></circle><path d="M13 14l8 7m6 0 7-9M27 27l9 7m-16-7-8 8M13 12h21M10 15v19m3 3h23m3-24v20"></path></svg></div><h3>Molecular Epidemiology</h3><p>Characterizing circulating genotypes, strains, and genetic markers to understand pathogen diversity and patterns of transmission.</p></article>
+<article class="card"><div aria-hidden="true" class="card-icon"><svg aria-label="DNA helix" role="img" viewbox="0 0 48 48"><path d="M14 6c0 10 20 10 20 18S14 32 14 42M34 6c0 10-20 10-20 18s20 8 20 18M17 11h14M15 18h18M15 30h18M17 37h14"></path></svg></div><h3>Diagnostics and Genomics</h3><p>Combining classical molecular methods with sequence-based genomics to improve pathogen detection and characterization.</p></article>
+<article class="card"><div aria-hidden="true" class="card-icon"><svg aria-label="People and health" role="img" viewbox="0 0 48 48"><circle cx="18" cy="14" r="6"></circle><circle cx="33" cy="17" r="5"></circle><path d="M6 38c0-8 5-13 12-13s12 5 12 13M27 28c2-2 4-3 7-3 5 0 9 4 9 10v3H31"></path><path d="M24 18v8m-4-4h8"></path></svg></div><h3>Public Health Impact</h3><p>Connecting laboratory findings with epidemiological data to investigate infection outcomes and antimicrobial resistance in human and environmental samples.</p></article>
+</div>
+</div>
+</section>
+<section class="section section-soft" id="about">
+<div class="wrap about-grid">
+<div>
+<span class="eyebrow">Who We Are</span>
+<h2>Research with a public-health purpose</h2>
+<p>The Enteric Pathogens Intelligence Lab investigates real-world infectious disease problems by combining classical molecular genetics, advanced sequence-based genomics, and epidemiological data from human patients.</p>
+<p>We aim to track genotypes and strains of diarrhoea-causing viral and bacterial pathogens among children, while characterizing the distribution and genetic markers of antimicrobial-resistant pathogens in human and environmental samples. By integrating laboratory findings with epidemiological information, we seek to understand pathogen diversity, relevant confounding factors, and infection outcomes.</p>
+</div>
+<div class="callout"><strong>Our central research question</strong><br/><br/>“What is the true diversity of enteric pathogens, and how does that diversity influence the outcome of each infection event?”</div>
+</div>
+</section>
+<section class="section" id="people">
+<div class="wrap">
+<div class="section-heading"><span class="eyebrow">Our Team</span><h2>Lab Leadership</h2><p>Meet the leadership of the Enteric Pathogens Intelligence Lab.</p></div>
+<div class="people-grid">
+<article class="person"><div aria-hidden="true" class="avatar">SKD</div><div><h3>Shuvra Kanti Dey, PhD</h3><p>Principal Investigator (PI)</p><a href="https://scholar.google.com/citations?user=E38WAjMAAAAJ&amp;hl=en" rel="noopener noreferrer" style="display:inline-block;margin-top:8px;color:var(--red);font-size:13px;font-weight:700" target="_blank">Google Scholar ↗</a></div></article>
+<article class="person"><div aria-hidden="true" class="avatar">NS</div><div><h3>Nadim Sharif, MS</h3><p>Co-Principal Investigator (Co-PI)</p><a href="https://scholar.google.com/citations?user=S3jP9DcAAAAJ&amp;hl=en" rel="noopener noreferrer" style="display:inline-block;margin-top:8px;color:var(--red);font-size:13px;font-weight:700" target="_blank">Google Scholar ↗</a></div></article>
+</div>
+<div class="team-subsection">
+<div class="section-heading" style="margin-top:48px;margin-bottom:24px"><span class="eyebrow">People Behind the Research</span><h2>Research Team</h2><p>Our team brings together researchers and trainees working across enteric pathogen surveillance, molecular epidemiology, diagnostics, genomics, and antimicrobial resistance.</p></div>
+<div class="card team-note" style="max-width:850px;margin:0 auto;text-align:center">
+<div aria-hidden="true" class="card-icon" style="margin:0 auto 15px"><svg viewbox="0 0 48 48"><circle cx="18" cy="15" r="6"></circle><circle cx="33" cy="17" r="5"></circle><path d="M6 39c0-8 5-13 12-13s12 5 12 13M28 28c2-2 4-3 6-3 5 0 8 4 8 10v4"></path></svg></div>
+<h3>Researchers, Trainees &amp; Collaborators</h3>
+<p>Individual team member profiles can be added here as members join the lab. Each profile can include a name, role, research interests, photograph, and relevant academic links.</p>
+</div>
+</div>
+</div>
+</section>
+<section class="section section-soft" id="publications">
+<div class="wrap">
+<div class="section-heading"><span class="eyebrow">Scientific Output</span><h2>Selected Publications</h2><p>Peer-reviewed publications on enteric pathogens, infectious disease epidemiology, diagnostics, and public health, listed from newest to oldest.</p></div>
+<div aria-label="Publications by year" class="publication-carousel"><div aria-label="Select publication year" class="publication-slide-nav" role="tablist"><button aria-controls="publication-slide-2026" aria-selected="true" class="year-tab active" data-slide="0" role="tab" type="button">2026</button><button aria-controls="publication-slide-2025" aria-selected="false" class="year-tab" data-slide="1" role="tab" type="button">2025</button><button aria-controls="publication-slide-2024" aria-selected="false" class="year-tab" data-slide="2" role="tab" type="button">2024</button><button aria-controls="publication-slide-2023" aria-selected="false" class="year-tab" data-slide="3" role="tab" type="button">2023</button><button aria-controls="publication-slide-2022" aria-selected="false" class="year-tab" data-slide="4" role="tab" type="button">2022</button><button aria-controls="publication-slide-2021" aria-selected="false" class="year-tab" data-slide="5" role="tab" type="button">2021</button><button aria-controls="publication-slide-2020" aria-selected="false" class="year-tab" data-slide="6" role="tab" type="button">2020</button></div><div class="publication-slides"><div aria-label="2026 publications" class="publication-slide active" data-year="2026" id="publication-slide-2026" role="tabpanel"><div class="publication-slide-heading"><h3>2026</h3><span class="publication-count">4 publications</span></div><div class="cards publication-cards"><article class="card publication-card">
+<span class="publication-year">2026 · In Silico Pharmacology</span>
+<h3>In silico prediction, molecular docking and simulation of natural flavonoid apigenin and xanthoangelol E against human metapneumovirus</h3>
+<p class="publication-authors">Rahaman HH, Khan A, Sharif N, Ahmed W, Sharif NM, Majumder R, et al.</p>
+<p class="publication-journal"><em>In Silico Pharmacology.</em> 2026;14(1):40.</p>
+<a class="publication-link" href="https://doi.org/10.1007/s40203-025-00539-7" rel="noopener noreferrer" target="_blank">Read article / DOI ↗</a>
+</article><article class="card publication-card">
+<span class="publication-year">2026 · International Journal of Infectious Diseases</span>
+<h3>Spatiotemporal dynamics and reemergence of chikungunya virus in Bangladesh from 2008 to 2025</h3>
+<p class="publication-authors">Sharif N, Khan A, Sharif NM, Dey SK.</p>
+<p class="publication-journal"><em>International Journal of Infectious Diseases.</em> 2026;166:108529.</p>
+<a class="publication-link" href="https://doi.org/10.1016/j.ijid.2026.108529" rel="noopener noreferrer" target="_blank">Read article / DOI ↗</a>
+</article><article class="card publication-card">
+<span class="publication-year">2026 · Scientific Reports</span>
+<h3>Emergence of human enteric adenovirus F41 among children with gastroenteritis in North-central Bangladesh, 2022–2024</h3>
+<p class="publication-authors">Sharif N, Masud AI, Naim J, et al.</p>
+<p class="publication-journal"><em>Scientific Reports.</em> 2026;16:24032.</p>
+<a class="publication-link" href="https://doi.org/10.1038/s41598-026-53064-8" rel="noopener noreferrer" target="_blank">Read article / DOI ↗</a>
+</article><article class="card publication-card">
+<span class="publication-year">2026 · Scientific Reports</span>
+<h3>Structure-based computational screening and molecular dynamics reveal potential inhibitors of Norovirus VP1 and RdRp Proteins: an in-silico study</h3>
+<p class="publication-authors">Rahaman HH, Sharif N, Kafi AI, et al.</p>
+<p class="publication-journal"><em>Scientific Reports.</em> 2026;16:29732.</p>
+<a class="publication-link" href="https://doi.org/10.1038/s41598-026-55563-0" rel="noopener noreferrer" target="_blank">Read article / DOI ↗</a>
+</article></div></div><div aria-label="2025 publications" class="publication-slide" data-year="2025" hidden id="publication-slide-2025" role="tabpanel"><div class="publication-slide-heading"><h3>2025</h3><span class="publication-count">3 publications</span></div><div class="cards publication-cards"><article class="card publication-card">
+<span class="publication-year">2025 · npj Clean Water</span>
+<h3>Antimicrobial resistant enteric bacteria are widely distributed among environmental water sources in Dhaka, Bangladesh</h3>
+<p class="publication-authors">Sharif N, Opu RR, Saha T, Khan A, Alzahrani FM, Alsuwat MA, et al.</p>
+<p class="publication-journal"><em>npj Clean Water.</em> 2025;8:16.</p>
+<a class="publication-link" href="https://doi.org/10.1038/s41545-025-00447-5" rel="noopener noreferrer" target="_blank">Read article / DOI ↗</a>
+</article><article class="card publication-card">
+<span class="publication-year">2025 · Health Science Reports</span>
+<h3>Trends of Human Metapneumovirus Outbreaks in Bangladesh: Probable Risks and Preventive Strategies</h3>
+<p class="publication-authors">Sharif N, Dey SK.</p>
+<p class="publication-journal"><em>Health Science Reports.</em> 2025;8:e71300.</p>
+<a class="publication-link" href="https://doi.org/10.1002/hsr2.71300" rel="noopener noreferrer" target="_blank">Read article / DOI ↗</a>
+</article><article class="card publication-card">
+<span class="publication-year">2025 · Open Forum Infectious Diseases</span>
+<h3>Clinical epidemiology of dengue and COVID-19 co-infection among the residents in Dhaka, Bangladesh, 2021–2023: A cross-sectional study</h3>
+<p class="publication-authors">Sharif N, Opu RR, Khan A, Saha T, Masud AI, Naim J, Martinez ZL, et al.</p>
+<p class="publication-journal"><em>Open Forum Infectious Diseases.</em> 2025;ofaf039.</p>
+<a class="publication-link" href="https://doi.org/10.1093/ofid/ofaf039" rel="noopener noreferrer" target="_blank">Read article / DOI ↗</a>
+</article></div></div><div aria-label="2024 publications" class="publication-slide" data-year="2024" hidden id="publication-slide-2024" role="tabpanel"><div class="publication-slide-heading"><h3>2024</h3><span class="publication-count">4 publications</span></div><div class="cards publication-cards"><article class="card publication-card">
+<span class="publication-year">2024 · Scientific Reports</span>
+<h3>Side effects associated with homogenous and heterogenous doses of Oxford–AstraZeneca vaccine among adults in Bangladesh: An observational study</h3>
+<p class="publication-authors">Sharif N, Opu RR, Saha T, Khan A, Aljohani A, Alsuwat MA, et al.</p>
+<p class="publication-journal"><em>Scientific Reports.</em> 2024;14:23794.</p>
+<a class="publication-link" href="https://doi.org/10.1038/s41598-024-75833-z" rel="noopener noreferrer" target="_blank">Read article / DOI ↗</a>
+</article><article class="card publication-card">
+<span class="publication-year">2024 · Open Forum Infectious Diseases</span>
+<h3>The epidemiologic and clinical characteristics of 2023-dengue outbreak in Bangladesh</h3>
+<p class="publication-authors">Sharif N, Sharif NM, Khan A, Dey SK.</p>
+<p class="publication-journal"><em>Open Forum Infectious Diseases.</em> 2024;ofae066.</p>
+<a class="publication-link" href="https://doi.org/10.1093/ofid/ofae066" rel="noopener noreferrer" target="_blank">Read article / DOI ↗</a>
+</article><article class="card publication-card">
+<span class="publication-year">2024 · Health Science Reports</span>
+<h3>Tackling the outbreak of Nipah virus in Bangladesh amidst COVID-19: A potential threat to public health and actionable measures</h3>
+<p class="publication-authors">Sharif N, Sharif NM, Khan A, Dey SK.</p>
+<p class="publication-journal"><em>Health Science Reports.</em> 2024;7:e2010.</p>
+<a class="publication-link" href="https://doi.org/10.1002/hsr2.2010" rel="noopener noreferrer" target="_blank">Read article / DOI ↗</a>
+</article><article class="card publication-card">
+<span class="publication-year">2024 · Frontiers in Microbiology</span>
+<h3>Evolving epidemiology, clinical features, and genotyping of dengue outbreaks in Bangladesh, 2000–2024: A systematic review</h3>
+<p class="publication-authors">Sharif N, Opu RR, Saha T, Masud AI, Naim J, Alsharif KF, et al.</p>
+<p class="publication-journal"><em>Frontiers in Microbiology.</em> 2024;15.</p>
+<a class="publication-link" href="https://doi.org/10.3389/fmicb.2024.1481418" rel="noopener noreferrer" target="_blank">Read article / DOI ↗</a>
+</article></article></div></div><div aria-label="2023 publications" class="publication-slide" data-year="2023" hidden id="publication-slide-2023" role="tabpanel"><div class="publication-slide-heading"><h3>2023</h3><span class="publication-count">5 publications</span></div><div class="cards publication-cards"><article class="card publication-card">
+<span class="publication-year">2023 · Frontiers in Immunology</span>
+<h3>Prevalence and genetic diversity of rotavirus in Bangladesh during pre-vaccination period, 1973–2023: A meta-analysis</h3>
+<p class="publication-authors">Sharif N, Sharif NM, Khan A, Azpíroz ID, Martínez R, Díez ID, et al.</p>
+<p class="publication-journal"><em>Frontiers in Immunology.</em> 2023;14:1289032.</p>
+<a class="publication-link" href="https://doi.org/10.3389/fimmu.2023.1289032" rel="noopener noreferrer" target="_blank">Read article / DOI ↗</a>
+</article><article class="card publication-card">
+<span class="publication-year">2023 · Scientific Reports</span>
+<h3>Multidrug resistance pattern and molecular epidemiology of pathogens among children with diarrhea in Bangladesh, 2019–2021</h3>
+<p class="publication-authors">Sharif N, Ahmed SN, Khandaker S, Monifa NH, Abusharha A, Vargas DL, et al.</p>
+<p class="publication-journal"><em>Scientific Reports.</em> 2023;13:13975.</p>
+<a class="publication-link" href="https://doi.org/10.1038/s41598-023-41174-6" rel="noopener noreferrer" target="_blank">Read article / DOI ↗</a>
+</article><article class="card publication-card">
+<span class="publication-year">2023 · Journal of Infection and Public Health</span>
+<h3>High prevalence of norovirus GII.4 Sydney among children with acute gastroenteritis in Bangladesh, 2018–2021</h3>
+<p class="publication-authors">Sharif N, Ahmed SN, Sharif NM, Alzahrani KJ, Alsuwat MA, Alzahrani FM, et al.</p>
+<p class="publication-journal"><em>Journal of Infection and Public Health.</em> 2023;16:1015–1022.</p>
+<a class="publication-link" href="https://doi.org/10.1016/j.jiph.2023.05.002" rel="noopener noreferrer" target="_blank">Read article / DOI ↗</a>
+</article><article class="card publication-card">
+<span class="publication-year">2023 · Heliyon</span>
+<h3>Epidemiology of mpox: Focus on men with HIV</h3>
+<p class="publication-authors">Sharif N, Dey SK.</p>
+<p class="publication-journal"><em>Heliyon.</em> 2023;9:e22129.</p>
+<a class="publication-link" href="https://doi.org/10.1016/j.heliyon.2023.e22129" rel="noopener noreferrer" target="_blank">Read article / DOI ↗</a>
+</article><article class="card publication-card">
+<span class="publication-year">2023 · Frontiers in Public Health</span>
+<h3>Prevalence and impact of long COVID-19 among patients with diabetes and cardiovascular diseases in Bangladesh</h3>
+<p class="publication-authors">Sharif N, Ahmed SN, Khandaker S, Monifa NH, Talukder AA, Parvez AK, et al.</p>
+<p class="publication-journal"><em>Frontiers in Public Health.</em> 2023;11:1222868.</p>
+<a class="publication-link" href="https://doi.org/10.3389/fpubh.2023.1222868" rel="noopener noreferrer" target="_blank">Read article / DOI ↗</a>
+</article></div></div><div aria-label="2022 publications" class="publication-slide" data-year="2022" hidden id="publication-slide-2022" role="tabpanel"><div class="publication-slide-heading"><h3>2022</h3><span class="publication-count">1 publication</span></div><div class="cards publication-cards"><article class="card publication-card">
+<span class="publication-year">2022 · PLOS ONE</span>
+<h3>Genomic surveillance, evolution and global transmission of SARS-CoV-2 during 2019–2022</h3>
+<p class="publication-authors">Sharif N, Alzahrani KJ, Ahmed SN, Khan A, Banjer HJ, Alzahrani FM, et al.</p>
+<p class="publication-journal"><em>PLOS ONE.</em> 2022;17(8):e0271074.</p>
+<a class="publication-link" href="https://doi.org/10.1371/journal.pone.0271074" rel="noopener noreferrer" target="_blank">Read article / DOI ↗</a>
+</article></div></div><div aria-label="2021 publications" class="publication-slide" data-year="2021" hidden id="publication-slide-2021" role="tabpanel"><div class="publication-slide-heading"><h3>2021</h3><span class="publication-count">2 publications</span></div><div class="cards publication-cards"><article class="card publication-card">
+<span class="publication-year">2021 · Frontiers in Immunology</span>
+<h3>Efficacy, Immunogenicity and safety of COVID-19 vaccines: A systematic review and meta-analysis</h3>
+<p class="publication-authors">Sharif N, Alzahrani KJ, Ahmed SN, Dey SK.</p>
+<p class="publication-journal"><em>Frontiers in Immunology.</em> 2021;12:714170.</p>
+<a class="publication-link" href="https://doi.org/10.3389/fimmu.2021.714170" rel="noopener noreferrer" target="_blank">Read article / DOI ↗</a>
+</article><article class="card publication-card">
+<span class="publication-year">2021 · Frontiers in Microbiology</span>
+<h3>Molecular epidemiology, evolution and reemergence of chikungunya virus in South Asia</h3>
+<p class="publication-authors">Sharif N, Sarkar MK, Ferdous RN, Ahmed SN, Billah MB, Talukder AA, et al.</p>
+<p class="publication-journal"><em>Frontiers in Microbiology.</em> 2021;12:689979.</p>
+<a class="publication-link" href="https://doi.org/10.3389/fmicb.2021.689979" rel="noopener noreferrer" target="_blank">Read article / DOI ↗</a>
+</article></div></div><div aria-label="2020 publications" class="publication-slide" data-year="2020" hidden id="publication-slide-2020" role="tabpanel"><div class="publication-slide-heading"><h3>2020</h3><span class="publication-count">2 publications</span></div><div class="cards publication-cards"><article class="card publication-card">
+<span class="publication-year">2020 · The Pediatric Infectious Disease Journal</span>
+<h3>Molecular and Epidemiologic Analysis of Diarrheal Pathogens in Children With Acute Gastroenteritis in Bangladesh During 2014–2019</h3>
+<p class="publication-authors">Sharif N, Nobel NU, Sakib N, Liza SM, Khan ST, Billah MB, et al.</p>
+<p class="publication-journal"><em>The Pediatric Infectious Disease Journal.</em> 2020;39:580–585.</p>
+<a class="publication-link" href="https://doi.org/10.1097/INF.0000000000002637" rel="noopener noreferrer" target="_blank">Read article / DOI ↗</a>
+</article><article class="card publication-card">
+<span class="publication-year">2020 · Journal of Medical Virology</span>
+<h3>Molecular and epidemiological trends of human bocavirus and adenovirus in children with acute gastroenteritis in Bangladesh during 2015 to 2019</h3>
+<p class="publication-authors">Sharif N, Parvez AK, Haque A, Talukder AA, Ushijima H, Dey SK.</p>
+<p class="publication-journal"><em>Journal of Medical Virology.</em> 2020;92:3194–3201.</p>
+<a class="publication-link" href="https://doi.org/10.1002/jmv.25812" rel="noopener noreferrer" target="_blank">Read article / DOI ↗</a>
+</article></div></div></div><div class="publication-controls"><button aria-label="Previous publication year" class="slide-arrow" data-direction="-1" type="button">← Previous year</button><span aria-live="polite" class="slide-status">1 of 7 years</span><button aria-label="Next publication year" class="slide-arrow" data-direction="1" type="button">Next year →</button><button aria-pressed="false" class="slide-arrow autoplay-toggle" type="button">Pause slideshow</button></div></div>
+</div>
+</section>
+<section class="section section-soft" id="opportunities">
+<div class="wrap notice">
+<span class="eyebrow">Work With Us</span><h2>Opportunities</h2>
+<p>Information about student projects, research training, and collaboration opportunities can be posted here when available.</p>
+</div>
+</section>
+<section aria-label="Support our work" class="donate-mini" id="donate">
+<div class="wrap donate-mini-inner">
+<p><strong>Support our work</strong> — Help advance enteric pathogen research and student training. Donation details will be shared when verified arrangements are available.</p>
+<a href="#contact">Donation enquiries</a>
+</div>
+</section>
+<section class="section" id="contact">
+<div class="wrap">
+<div class="contact-panel">
+<div><h2>Connect with our lab</h2><p>For research collaboration, academic enquiries, and scientific exchange, contact our lab leadership.</p><p class="contact-email"><strong>PI — Shuvra Kanti Dey:</strong> <a href="mailto:shuvradey@yahoo.com">shuvradey@yahoo.com</a></p><p class="contact-email"><strong>Co-PI — Nadim Sharif:</strong> <a href="mailto:nadim@juniv.edu">nadim@juniv.edu</a></p></div>
+</div>
+</div>
+</section>
 </main>
-<footer><div class="wrap foot"><span>© <span id="year"></span> Enteric Pathogens Intelligence Lab</span><span>Department of Microbiology · Jahangirnagar University</span><span>Research · Education · Collaboration</span></div></footer>
+<footer>
+<div class="wrap footer-inner">
+<p>© <span id="year"></span> Enteric Pathogens Intelligence Lab</p>
+<div class="footer-links"><a href="#home">Back to top ↑</a><a href="#research">Research</a><a href="#people">Our Team</a><a href="#donate">Donate</a></div>
+</div>
+</footer>
 <script>
-  const menu = document.getElementById('menu');
-  const nav = document.getElementById('navlinks');
-  menu.addEventListener('click', () => {
-    const isOpen = nav.classList.toggle('open');
-    menu.setAttribute('aria-expanded', String(isOpen));
-  });
-  nav.querySelectorAll('a').forEach(link => link.addEventListener('click', () => {
-    nav.classList.remove('open'); menu.setAttribute('aria-expanded','false');
-  }));
-  document.getElementById('year').textContent = new Date().getFullYear();
-</script>
+    const toggle = document.querySelector('.menu-toggle');
+    const nav = document.querySelector('.nav-links');
+    toggle.addEventListener('click', () => {
+      const isOpen = nav.classList.toggle('open');
+      toggle.setAttribute('aria-expanded', String(isOpen));
+      toggle.setAttribute('aria-label', isOpen ? 'Close navigation menu' : 'Open navigation menu');
+    });
+    nav.querySelectorAll('a').forEach(link => link.addEventListener('click', () => {
+      nav.classList.remove('open');
+      toggle.setAttribute('aria-expanded', 'false');
+    }));
+
+    const publicationSlides = Array.from(document.querySelectorAll('.publication-slide'));
+    const yearTabs = Array.from(document.querySelectorAll('.year-tab'));
+    const publicationPrev = document.querySelector('.slide-arrow[data-direction="-1"]');
+    const publicationNext = document.querySelector('.slide-arrow[data-direction="1"]');
+    const publicationStatus = document.querySelector('.slide-status');
+    let activePublicationSlide = 0;
+    const autoplayToggle = document.querySelector('.autoplay-toggle');
+    const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
+    let autoplayTimer = null;
+    let isAutoplayRunning = !reducedMotion.matches;
+    function showPublicationSlide(index) {
+      activePublicationSlide = (index + publicationSlides.length) % publicationSlides.length;
+      publicationSlides.forEach((slide, i) => {
+        const active = i === activePublicationSlide;
+        slide.hidden = !active;
+        slide.classList.toggle('active', active);
+      });
+      yearTabs.forEach((tab, i) => {
+        const active = i === activePublicationSlide;
+        tab.classList.toggle('active', active);
+        tab.setAttribute('aria-selected', String(active));
+        tab.tabIndex = active ? 0 : -1;
+      });
+      publicationPrev.disabled = false;
+      publicationNext.disabled = false;
+      publicationStatus.textContent = `${activePublicationSlide + 1} of ${publicationSlides.length} years`;
+    }
+    function stopAutoplay() {
+      if (autoplayTimer) window.clearInterval(autoplayTimer);
+      autoplayTimer = null;
+      isAutoplayRunning = false;
+      autoplayToggle.textContent = 'Play slideshow';
+      autoplayToggle.setAttribute('aria-pressed', 'true');
+    }
+    function startAutoplay() {
+      if (reducedMotion.matches) { stopAutoplay(); return; }
+      if (autoplayTimer) window.clearInterval(autoplayTimer);
+      isAutoplayRunning = true;
+      autoplayToggle.textContent = 'Pause slideshow';
+      autoplayToggle.setAttribute('aria-pressed', 'false');
+      autoplayTimer = window.setInterval(() => showPublicationSlide(activePublicationSlide + 1), 6000);
+    }
+    yearTabs.forEach((tab, i) => tab.addEventListener('click', () => showPublicationSlide(i)));
+    publicationPrev.addEventListener('click', () => showPublicationSlide(activePublicationSlide - 1));
+    publicationNext.addEventListener('click', () => showPublicationSlide(activePublicationSlide + 1));
+    autoplayToggle.addEventListener('click', () => isAutoplayRunning ? stopAutoplay() : startAutoplay());
+    yearTabs.forEach((tab, i) => tab.addEventListener('keydown', event => {
+      if (event.key === 'ArrowRight') { event.preventDefault(); const nextIndex = (i + 1) % yearTabs.length; showPublicationSlide(nextIndex); yearTabs[nextIndex].focus(); }
+      if (event.key === 'ArrowLeft') { event.preventDefault(); const prevIndex = (i - 1 + yearTabs.length) % yearTabs.length; showPublicationSlide(prevIndex); yearTabs[prevIndex].focus(); }
+    }));
+    // Pause while a visitor interacts with the carousel; resume only if it was running.
+    const publicationCarousel = document.querySelector('.publication-carousel');
+    publicationCarousel.addEventListener('mouseenter', () => { if (isAutoplayRunning) { stopAutoplay(); publicationCarousel.dataset.resumeAutoplay = 'true'; } });
+    publicationCarousel.addEventListener('mouseleave', () => { if (publicationCarousel.dataset.resumeAutoplay === 'true') { delete publicationCarousel.dataset.resumeAutoplay; startAutoplay(); } });
+    publicationCarousel.addEventListener('focusin', () => { if (isAutoplayRunning) { stopAutoplay(); publicationCarousel.dataset.resumeAutoplay = 'true'; } });
+    publicationCarousel.addEventListener('focusout', event => { if (!publicationCarousel.contains(event.relatedTarget) && publicationCarousel.dataset.resumeAutoplay === 'true') { delete publicationCarousel.dataset.resumeAutoplay; startAutoplay(); } });
+    reducedMotion.addEventListener?.('change', event => { if (event.matches) stopAutoplay(); });
+    showPublicationSlide(0);
+    if (isAutoplayRunning) startAutoplay(); else stopAutoplay();
+
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
 </body>
 </html>
